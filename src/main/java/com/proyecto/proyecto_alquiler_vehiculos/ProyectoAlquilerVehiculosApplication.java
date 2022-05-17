@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import Models.Cliente;
+import Models.Vehiculo;
+import Models.Vehiculos;
+
 @SpringBootApplication
 @RestController
 public class ProyectoAlquilerVehiculosApplication {
@@ -17,7 +21,17 @@ public class ProyectoAlquilerVehiculosApplication {
 
 	@GetMapping("/registrar")
 	public String RegistrarVehiculo(@RequestParam(value = "name", defaultValue = "Leo") String name) {
-		return String.format("Bienvenido %s!", name);
+		Vehiculo bmw =  new Vehiculo();
+		bmw.setAnio("25");
+		
+
+		Cliente carlos = new Cliente();
+		carlos.setApellido("Memmo");
+
+		Vehiculos bmws = new Vehiculos();
+		bmws.setVehiculo(bmw); 
+
+		return String.format("Bienvenido %s!", name + bmw.getAnio() + carlos.getApellido() + bmws.getVehiculo());
 	}
 
 	@GetMapping("/contacto")
