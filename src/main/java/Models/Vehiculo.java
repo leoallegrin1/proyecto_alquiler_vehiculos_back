@@ -1,5 +1,6 @@
 package Models;
 
+import java.time.format.DateTimeFormatter;
 import java.time.format.DecimalStyle;
 
 
@@ -59,6 +60,18 @@ public class Vehiculo {
     public void setDisponible(boolean disponible) {
         Disponible = disponible;
     }
+    public DateTimeFormatter getFechaInicioAlq() {
+        return FechaInicioAlq;
+    }
+    public void setFechaInicioAlq(DateTimeFormatter fechaInicioAlq) {
+        FechaInicioAlq = fechaInicioAlq;
+    }
+    public DateTimeFormatter getFechaFinAlq() {
+        return FechaFinAlq;
+    }
+    public void setFechaFinAlq(DateTimeFormatter fechaFinAlq) {
+        FechaFinAlq = fechaFinAlq;
+    }
     private String Modelo;
     private String Anio;
     private String Patente;
@@ -67,6 +80,8 @@ public class Vehiculo {
     private String Categoria;
     private DecimalStyle Precio_Alquiler;
     private boolean Disponible;
+    private DateTimeFormatter FechaInicioAlq;
+    private DateTimeFormatter FechaFinAlq;
 
     
 } 

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Models.Cliente;
 import Models.Vehiculo;
-import Models.Vehiculos;
 
 @SpringBootApplication
 @RestController
@@ -23,15 +22,17 @@ public class ProyectoAlquilerVehiculosApplication {
 	public String RegistrarVehiculo(@RequestParam(value = "name", defaultValue = "Leo") String name) {
 		Vehiculo bmw =  new Vehiculo();
 		bmw.setAnio("25");
+		bmw.setModelo("Bmw");
 		
 
 		Cliente carlos = new Cliente();
 		carlos.setApellido("Memmo");
 
-		Vehiculos bmws = new Vehiculos();
-		bmws.setVehiculo(bmw); 
+		Vehiculo bmws [] = new Vehiculo[1];
 
-		return String.format("Bienvenido %s!", name + bmw.getAnio() + carlos.getApellido() + bmws.getVehiculo());
+		bmws[0] = bmw;
+		
+		return String.format("Bienvenido %s!", name + bmw.getAnio() + carlos.getApellido()  + bmws[0].getModelo() + bmws[0].getAnio());
 	}
 
 	@GetMapping("/contacto")
