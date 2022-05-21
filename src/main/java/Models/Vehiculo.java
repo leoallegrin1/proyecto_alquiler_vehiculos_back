@@ -5,7 +5,7 @@ import java.time.format.DecimalStyle;
 
 
 public class Vehiculo {
-    private String Marca;
+    public String Marca;
     public String getMarca() {
         return Marca;
     }
@@ -30,11 +30,11 @@ public class Vehiculo {
     public void setPatente(String patente) {
         Patente = patente;
     }
-    public int getCantPlazas() {
-        return CantPlazas;
+    public String getTamanio() {
+        return Tamanio;
     }
-    public void setCantPlazas(int cantPlazas) {
-        CantPlazas = cantPlazas;
+    public void setTamanio(String tamanio) {
+        Tamanio = tamanio;
     }
     public boolean isTransmision() {
         return Transmision;
@@ -72,16 +72,24 @@ public class Vehiculo {
     public void setFechaFinAlq(DateTimeFormatter fechaFinAlq) {
         FechaFinAlq = fechaFinAlq;
     }
-    private String Modelo;
-    private String Anio;
-    private String Patente;
-    private int CantPlazas;
-    private boolean Transmision;
-    private String Categoria;
-    private DecimalStyle Precio_Alquiler;
-    private boolean Disponible;
-    private DateTimeFormatter FechaInicioAlq;
-    private DateTimeFormatter FechaFinAlq;
+    public int getID() {
+        return ID;
+    }
+    public void setID(int id) {
+        ID = id;
+    }
+
+    public int ID;
+    public String Modelo;
+    public String Anio;
+    public String Patente;
+    public String Tamanio;
+    public boolean Transmision;
+    public String Categoria;
+    public DecimalStyle Precio_Alquiler;
+    public boolean Disponible;
+    public DateTimeFormatter FechaInicioAlq;
+    public DateTimeFormatter FechaFinAlq;
 
     
 } 
