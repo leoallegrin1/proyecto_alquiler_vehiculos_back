@@ -1,9 +1,8 @@
-package Models;
+package com.proyecto.proyecto_alquiler_vehiculos.Models;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Cliente {
-    private String Username;
     public String getUsername() {
         return Username;
     }
@@ -58,6 +57,30 @@ public class Cliente {
     public void setNacionalidad(String nacionalidad) {
         Nacionalidad = nacionalidad;
     }
+
+
+    
+    public Cliente() {
+    }
+
+
+
+    public Cliente(String username, String password, DateTimeFormat fechaNacimiento, String dNI,
+            String correoElectronico, String nombre, String apellido, String celular, String nacionalidad) {
+        Username = username;
+        Password = password;
+        FechaNacimiento = fechaNacimiento;
+        DNI = dNI;
+        CorreoElectronico = correoElectronico;
+        Nombre = nombre;
+        Apellido = apellido;
+        Celular = celular;
+        Nacionalidad = nacionalidad;
+    }
+
+
+
+    private String Username;
     private String Password;
     private DateTimeFormat FechaNacimiento;
     private String DNI;
@@ -66,6 +89,4 @@ public class Cliente {
     private String Apellido;
     private String Celular;
     private String Nacionalidad;
-
-    
 }

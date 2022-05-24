@@ -1,11 +1,10 @@
-package Models;
+package com.proyecto.proyecto_alquiler_vehiculos.Models;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.DecimalStyle;
 
 
 public class Vehiculo {
-    public String Marca;
     public String getMarca() {
         return Marca;
     }
@@ -21,8 +20,8 @@ public class Vehiculo {
     public String getAnio() {
         return Anio;
     }
-    public void setAnio(String string) {
-        Anio = string;
+    public void setAnio(String anio) {
+        Anio = anio;
     }
     public String getPatente() {
         return Patente;
@@ -79,7 +78,27 @@ public class Vehiculo {
         ID = id;
     }
 
+    public Vehiculo() {
+    }
+
+
+
+   
+    public Vehiculo (int Id, String marca,String modelo, String anio,
+     String tamanio, String categoria,Boolean disponible){
+        ID = Id;
+        Marca = marca;
+        Modelo = modelo;
+        Anio = anio;
+        Tamanio = tamanio;
+        Categoria = categoria;
+        Disponible = disponible;
+    }
+
+
+
     public int ID;
+    public String Marca;
     public String Modelo;
     public String Anio;
     public String Patente;
@@ -90,6 +109,4 @@ public class Vehiculo {
     public boolean Disponible;
     public DateTimeFormatter FechaInicioAlq;
     public DateTimeFormatter FechaFinAlq;
-
-    
-} 
+}
