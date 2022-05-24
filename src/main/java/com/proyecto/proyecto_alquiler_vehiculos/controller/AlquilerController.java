@@ -26,6 +26,7 @@ public class AlquilerController {
 		return String.format("Bienvenido!");
 	}
 
+	//Este metodo lista todos los vehiculos
 	@GetMapping("/vehiculos")
 	public List<Vehiculo> listarVehiculos(){
         
