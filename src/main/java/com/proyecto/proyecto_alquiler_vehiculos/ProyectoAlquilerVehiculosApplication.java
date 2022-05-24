@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Models.Vehiculo;
+import lombok.val;
 
 @SpringBootApplication
 @RestController
@@ -86,5 +87,29 @@ public class ProyectoAlquilerVehiculosApplication {
 		return String.format("Vehiculo seleccionado: " + Vehiculo_seleccionado.getModelo() +
 				Vehiculo_seleccionado.getAnio() +
 				Vehiculo_seleccionado.getTamanio() + Vehiculo_seleccionado.getCategoria());
+	}
+
+	public void Filtrar() {
+
+	}
+
+	public void ValidarCampos() {
+
+	}
+
+	public void SeleccionarVehiculo() {
+
+	}
+
+	public void BuscarSeleccion() {
+
+	}
+
+	public void ValidarDatosCliente() {
+
+	}
+
+	public void RegistrarAlquiler() {
+
 	}
 }
