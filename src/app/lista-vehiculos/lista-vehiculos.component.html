@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Lista de vehiculos para alquilar</h2>
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <td>{{ vehiculo.marca }}</td>
+        <td>{{ vehiculo.modelo }}</td>
+        <td>{{ vehiculo.anio }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
