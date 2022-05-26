@@ -33,7 +33,5 @@ public class AlquilerController {
 		return IVehiculos.Vehiculos();
 	}
 
-    
-
-    
+	
 }

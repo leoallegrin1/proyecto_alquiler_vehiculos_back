@@ -4,109 +4,112 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DecimalStyle;
 
 
+
+
 public class Vehiculo {
-    public String getMarca() {
-        return Marca;
-    }
-    public void setMarca(String marca) {
-        Marca = marca;
-    }
-    public String getModelo() {
-        return Modelo;
-    }
-    public void setModelo(String modelo) {
-        Modelo = modelo;
-    }
-    public String getAnio() {
-        return Anio;
-    }
-    public void setAnio(String anio) {
-        Anio = anio;
-    }
-    public String getPatente() {
-        return Patente;
-    }
-    public void setPatente(String patente) {
-        Patente = patente;
-    }
-    public String getTamanio() {
-        return Tamanio;
-    }
-    public void setTamanio(String tamanio) {
-        Tamanio = tamanio;
-    }
-    public boolean isTransmision() {
-        return Transmision;
-    }
-    public void setTransmision(boolean transmision) {
-        Transmision = transmision;
-    }
-    public String getCategoria() {
-        return Categoria;
-    }
-    public void setCategoria(String categoria) {
-        Categoria = categoria;
-    }
-    public DecimalStyle getPrecio_Alquiler() {
-        return Precio_Alquiler;
-    }
-    public void setPrecio_Alquiler(DecimalStyle precio_Alquiler) {
-        Precio_Alquiler = precio_Alquiler;
-    }
-    public boolean isDisponible() {
-        return Disponible;
-    }
-    public void setDisponible(boolean disponible) {
-        Disponible = disponible;
-    }
-    public DateTimeFormatter getFechaInicioAlq() {
-        return FechaInicioAlq;
-    }
-    public void setFechaInicioAlq(DateTimeFormatter fechaInicioAlq) {
-        FechaInicioAlq = fechaInicioAlq;
-    }
-    public DateTimeFormatter getFechaFinAlq() {
-        return FechaFinAlq;
-    }
-    public void setFechaFinAlq(DateTimeFormatter fechaFinAlq) {
-        FechaFinAlq = fechaFinAlq;
-    }
-    public int getID() {
-        return ID;
-    }
-    public void setID(int id) {
-        ID = id;
-    }
+    
+
+    private int ID;
+    private String Marca;
+    private String Modelo;
+    private String Anio;
+    private String Patente;
+    private String Tamanio;
+    private boolean Transmision;
+    private String Categoria;
+    private DecimalStyle Precio_Alquiler;
+    private boolean Disponible;
+    private DateTimeFormatter FechaInicioAlq;
+    private DateTimeFormatter FechaFinAlq;
+    
 
     public Vehiculo() {
     }
 
 
-
-   
     public Vehiculo (int Id, String marca,String modelo, String anio,
-     String tamanio, String categoria,Boolean disponible){
-        ID = Id;
-        Marca = marca;
-        Modelo = modelo;
-        Anio = anio;
-        Tamanio = tamanio;
-        Categoria = categoria;
-        Disponible = disponible;
+     String tamanio, String categoria,Boolean disponible ){
+        super();
+        this.ID = Id;
+        this.Marca = marca;
+        this.Modelo = modelo;
+        this.Anio = anio;
+        this.Tamanio = tamanio;
+        this.Categoria = categoria;
+        this.Disponible = disponible;
     }
 
 
-
-    public int ID;
-    public String Marca;
-    public String Modelo;
-    public String Anio;
-    public String Patente;
-    public String Tamanio;
-    public boolean Transmision;
-    public String Categoria;
-    public DecimalStyle Precio_Alquiler;
-    public boolean Disponible;
-    public DateTimeFormatter FechaInicioAlq;
-    public DateTimeFormatter FechaFinAlq;
+    public String getMarca() {
+        return Marca;
+    }
+    public void setMarca(String marca) {
+        this.Marca = marca;
+    }
+    public String getModelo() {
+        return Modelo;
+    }
+    public void setModelo(String modelo) {
+        this.Modelo = modelo;
+    }
+    public String getAnio() {
+        return Anio;
+    }
+    public void setAnio(String anio) {
+        this.Anio = anio;
+    }
+    public String getPatente() {
+        return Patente;
+    }
+    public void setPatente(String patente) {
+        this.Patente = patente;
+    }
+    public String getTamanio() {
+        return Tamanio;
+    }
+    public void setTamanio(String tamanio) {
+        this.Tamanio = tamanio;
+    }
+    public boolean isTransmision() {
+        return Transmision;
+    }
+    public void setTransmision(boolean transmision) {
+        this.Transmision = transmision;
+    }
+    public String getCategoria() {
+        return Categoria;
+    }
+    public void setCategoria(String categoria) {
+        this.Categoria = categoria;
+    }
+    public DecimalStyle getPrecio_Alquiler() {
+        return Precio_Alquiler;
+    }
+    public void setPrecio_Alquiler(DecimalStyle precio_Alquiler) {
+        this.Precio_Alquiler = precio_Alquiler;
+    }
+    public boolean isDisponible() {
+        return Disponible;
+    }
+    public void setDisponible(boolean disponible) {
+        this.Disponible = disponible;
+    }
+    public DateTimeFormatter getFechaInicioAlq() {
+        return FechaInicioAlq;
+    }
+    public void setFechaInicioAlq(DateTimeFormatter fechaInicioAlq) {
+        this.FechaInicioAlq = fechaInicioAlq;
+    }
+    public DateTimeFormatter getFechaFinAlq() {
+        return FechaFinAlq;
+    }
+    public void setFechaFinAlq(DateTimeFormatter fechaFinAlq) {
+        this.FechaFinAlq = fechaFinAlq;
+    }
+    public int getID() {
+        return ID;
+    }
+    public void setID(int id) {
+        this.ID = id;
+    }
 }
