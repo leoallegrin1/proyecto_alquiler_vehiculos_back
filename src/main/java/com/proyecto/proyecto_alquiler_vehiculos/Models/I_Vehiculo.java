@@ -13,14 +13,19 @@ public class I_Vehiculo {
         
         List<Vehiculo> automoviles = new ArrayList<Vehiculo>();
         automoviles.add(new Vehiculo(1, "Toyota", "Corolla", "2022",
-         "Mediano", "Automovil", true));
+         "Mediano", "Automovil", true, 6500));
 
         automoviles.add(new Vehiculo(2, "Toyota", "Etios", "2021",
-         "chico","Automovil",false));
+         "chico","Automovil",false, 5000));
 
-        automoviles.add(new Vehiculo(3, "Toyota", "Camry", "2019",
-         "Mediano","Automovil",true));
+        automoviles.add(new Vehiculo(3, "Toyota", "Hilux", "2019",
+         "Grande","Pick-up",true,9000));
 
+        automoviles.add(new Vehiculo(4, "Peugeot", "Partner", "2020", 
+        "Mediano", "Utilitario", true, 6500)); 
+
+        automoviles.add(new Vehiculo(5, "Chevrolet", "Spin", "2018", "Grande", "Automovil", true, 7500));
+        
         return automoviles;
     }
 }

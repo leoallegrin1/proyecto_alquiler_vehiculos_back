@@ -17,7 +17,7 @@ public class Vehiculo {
     private String Tamanio;
     private boolean Transmision;
     private String Categoria;
-    private DecimalStyle Precio_Alquiler;
+    private Integer Precio_Alquiler;
     private boolean Disponible;
     private DateTimeFormatter FechaInicioAlq;
     private DateTimeFormatter FechaFinAlq;
@@ -28,7 +28,7 @@ public class Vehiculo {
 
 
     public Vehiculo (int Id, String marca,String modelo, String anio,
-     String tamanio, String categoria,Boolean disponible ){
+     String tamanio, String categoria,Boolean disponible, Integer precio_Alquiler ){
         super();
         this.ID = Id;
         this.Marca = marca;
@@ -37,6 +37,7 @@ public class Vehiculo {
         this.Tamanio = tamanio;
         this.Categoria = categoria;
         this.Disponible = disponible;
+        this.Precio_Alquiler = precio_Alquiler;
     }
 
 
@@ -82,10 +83,10 @@ public class Vehiculo {
     public void setCategoria(String categoria) {
         this.Categoria = categoria;
     }
-    public DecimalStyle getPrecio_Alquiler() {
+    public Integer getPrecio_Alquiler() {
         return Precio_Alquiler;
     }
-    public void setPrecio_Alquiler(DecimalStyle precio_Alquiler) {
+    public void setPrecio_Alquiler(Integer precio_Alquiler) {
         this.Precio_Alquiler = precio_Alquiler;
     }
     public boolean isDisponible() {
