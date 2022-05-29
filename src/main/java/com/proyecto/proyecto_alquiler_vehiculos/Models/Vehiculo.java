@@ -20,6 +20,7 @@ public class Vehiculo {
     private boolean Disponible;
     private DateTimeFormatter FechaInicioAlq;
     private DateTimeFormatter FechaFinAlq;
+    private String Imagen;
     
 
     public Vehiculo() {
@@ -27,7 +28,7 @@ public class Vehiculo {
 
 
     public Vehiculo (int Id, String marca,String modelo, String anio,
-     String tamanio, String categoria,Boolean disponible, Integer precio_Alquiler ){
+     String tamanio, String categoria,Boolean disponible, Integer precio_Alquiler, String imagen ){
         super();
         this.ID = Id;
         this.Marca = marca;
@@ -37,6 +38,7 @@ public class Vehiculo {
         this.Categoria = categoria;
         this.Disponible = disponible;
         this.Precio_Alquiler = precio_Alquiler;
+        this.Imagen = imagen;
     }
 
 
@@ -111,5 +113,11 @@ public class Vehiculo {
     }
     public void setID(int id) {
         this.ID = id;
+    }
+    public String getImagen() {
+        return Imagen;
+    }
+    public void setImagen(String imagen) {
+        this.Imagen = imagen;
     }
 }
