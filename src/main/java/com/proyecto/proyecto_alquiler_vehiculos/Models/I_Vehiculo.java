@@ -2,7 +2,8 @@ package com.proyecto.proyecto_alquiler_vehiculos.Models;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,12 @@ public class I_Vehiculo {
 
         automoviles.add(new Vehiculo(5, "Chevrolet", "Spin", "2018", "Grande", "Automovil", true, 7500));
         
+        //Con esto desaparecen los vehiculos que ya estan alquilados
+        automoviles = automoviles
+        .stream()
+        .filter(x -> x.isDisponible())
+        .collect(Collectors.toList());
+
         return automoviles;
     }
 }
