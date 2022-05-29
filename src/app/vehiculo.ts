@@ -6,5 +6,5 @@ export class Vehiculo {
   anio:string;
   disponible: boolean;
   precio_Alquiler:number;
-
+  imagen:String;
 }

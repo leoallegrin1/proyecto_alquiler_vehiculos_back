@@ -30,7 +30,7 @@ export class ListaVehiculosComponent implements OnInit {
   }
 
   SeleccionarVehiculo(vehiculo : Vehiculo){
-    let link = ['/vehiculo/id',vehiculo.id]
+    let link = ['/registrar-alquiler/id',vehiculo.id]
     this.router.navigate(link)
   }
 
