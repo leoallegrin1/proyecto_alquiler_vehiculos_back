@@ -1,6 +1,7 @@
 import { Vehiculo } from './../vehiculo';
 import { Component, OnInit } from '@angular/core';
 import { VehiculoService } from '../vehiculo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-vehiculos',
@@ -11,10 +12,14 @@ export class ListaVehiculosComponent implements OnInit {
 
   vehiculos:Vehiculo[];
 
-  constructor(private vehiculoServicio:VehiculoService) { }
+  constructor(
+    private router: Router,
+    private vehiculoServicio:VehiculoService
+    ) { }
 
   ngOnInit(): void {
     this.obtenerVehiculos();
+
   }
 
   private obtenerVehiculos(){
@@ -22,6 +27,11 @@ export class ListaVehiculosComponent implements OnInit {
     .subscribe(dato => {
       this.vehiculos = dato;
     })
+  }
+
+  SeleccionarVehiculo(vehiculo : Vehiculo){
+    let link = ['/vehiculo/id',vehiculo.id]
+    this.router.navigate(link)
   }
 
 }
