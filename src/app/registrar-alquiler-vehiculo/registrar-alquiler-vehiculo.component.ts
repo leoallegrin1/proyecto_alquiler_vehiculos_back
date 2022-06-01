@@ -1,4 +1,6 @@
+import { Vehiculo } from './../vehiculo';
 import { Component, OnInit } from '@angular/core';
+import { VehiculoService } from '../vehiculo.service';
 
 @Component({
   selector: 'app-registrar-alquiler-vehiculo',
@@ -7,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarAlquilerVehiculoComponent implements OnInit {
 
-
-  constructor() { }
+  vehiculos : Vehiculo;
+  constructor(private vehiculoServicio:VehiculoService) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +19,13 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
 
   }
 
+  private mostrarVehiculos(){
+    this.vehiculoServicio.obtenerVehiculo()
+    .subscribe(dato => {
+      this.vehiculos = dato;
+    })
+  }
+
 }
+
+

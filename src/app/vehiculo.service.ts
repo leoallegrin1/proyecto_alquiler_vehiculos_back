@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { Vehiculo } from './vehiculo';
 
 @Injectable({
@@ -9,11 +10,16 @@ import { Vehiculo } from './vehiculo';
 export class VehiculoService {
   //URL backend listado de todos los vehiculos
   private baseUrl = "http://localhost:8080/RentalsVenado/vehiculos";
+  private urlVehiSingle = "http://localhost:8080/RentalsVenado/ObtenerVehiculo?id=1"
 
   constructor(private httpClient : HttpClient) { }
 
   //Este metodo devuleve los vehiculos
   obtenerListaVehiculos(): Observable<Vehiculo[]>{
     return this.httpClient.get<Vehiculo[]>(`${this.baseUrl}`);
+  }
+
+  obtenerVehiculo():Observable<Vehiculo>{
+    return this.httpClient.get<Vehiculo>(`${this.urlVehiSingle}`)
   }
 }
