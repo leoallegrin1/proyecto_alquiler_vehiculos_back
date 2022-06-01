@@ -33,5 +33,9 @@ public class AlquilerController {
 		return IVehiculos.Vehiculos();
 	}
 
-	
+	//Este método obtiene un vehiculo seleccionado
+	@GetMapping("/ObtenerVehiculo")
+	public Vehiculo oVehiculo(int id){
+		return IVehiculos.obtenerVehiculo(id);
+	}
 }

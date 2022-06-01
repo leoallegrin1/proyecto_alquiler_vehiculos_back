@@ -16,7 +16,7 @@ public class I_Vehiculo {
          "Mediano", "Automovil", true, 6500,"https://acroadtrip.blob.core.windows.net/catalogo-imagenes/l/RT_V_96df320cb38a4a258f20418527a3d5f7.jpg"));
 
         automoviles.add(new Vehiculo(2, "Toyota", "Etios", "2021",
-         "chico","Automovil",false, 5000,"https://cdn.motor1.com/images/mgl/W81gLo/s3/220107-toyota5312.jpg" ));
+         "chico","Automovil",true, 5000,"https://cdn.motor1.com/images/mgl/7OE4J/s1/lanzamiento-toyota-etios-platinum.webp" ));
 
         automoviles.add(new Vehiculo(3, "Toyota", "Hilux", "2019",
          "Grande","Pick-up",true,9000,"https://img.remediosdigitales.com/9171a3/toyota-hilux-2021-pick-up-precio-mexico_/450_1000.jpg"));
@@ -33,5 +33,11 @@ public class I_Vehiculo {
         .collect(Collectors.toList());
 
         return automoviles;
+    }
+
+    public Vehiculo obtenerVehiculo(int id){
+        Vehiculo vehiculoSeleccionado = new Vehiculo();
+        vehiculoSeleccionado = Vehiculos().get(id);
+        return vehiculoSeleccionado;
     }
 }
