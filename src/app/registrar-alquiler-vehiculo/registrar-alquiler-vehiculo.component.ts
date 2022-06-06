@@ -1,7 +1,7 @@
 import { Vehiculo } from './../vehiculo';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { VehiculoService } from '../vehiculo.service';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-registrar-alquiler-vehiculo',
   templateUrl: './registrar-alquiler-vehiculo.component.html',
@@ -10,17 +10,21 @@ import { VehiculoService } from '../vehiculo.service';
 export class RegistrarAlquilerVehiculoComponent implements OnInit {
 
   vehiculos : Vehiculo;
-  constructor(private vehiculoServicio:VehiculoService) { }
 
-  ngOnInit(): void {
+  constructor(private vehiculoServicio:VehiculoService, private _route:ActivatedRoute) { }
+
+  ngOnInit() {
+    let id = this._route.snapshot.paramMap.get('id');
+    this.mostrarVehiculos(id!)
   }
 
   onSubmit(){
 
   }
 
-  private mostrarVehiculos(){
-    this.vehiculoServicio.obtenerVehiculo()
+  private mostrarVehiculos(cod: string){
+    var codigo = parseInt(cod);
+    this.vehiculoServicio.obtenerVehiculo(codigo)
     .subscribe(dato => {
       this.vehiculos = dato;
     })

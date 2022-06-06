@@ -10,7 +10,7 @@ import { Vehiculo } from './vehiculo';
 export class VehiculoService {
   //URL backend listado de todos los vehiculos
   private baseUrl = "http://localhost:8080/RentalsVenado/vehiculos";
-  private urlVehiSingle = "http://localhost:8080/RentalsVenado/ObtenerVehiculo?id=1"
+  private urlVehiSingle = "http://localhost:8080/RentalsVenado/ObtenerVehiculo"
 
   constructor(private httpClient : HttpClient) { }
 
@@ -19,7 +19,7 @@ export class VehiculoService {
     return this.httpClient.get<Vehiculo[]>(`${this.baseUrl}`);
   }
 
-  obtenerVehiculo():Observable<Vehiculo>{
-    return this.httpClient.get<Vehiculo>(`${this.urlVehiSingle}`)
+  obtenerVehiculo(id:number):Observable<Vehiculo>{
+    return this.httpClient.get<Vehiculo>(`${this.urlVehiSingle}/${id}`);
   }
 }
