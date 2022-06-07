@@ -39,4 +39,9 @@ public class AlquilerController {
 	public Vehiculo oVehiculo(@PathVariable Integer id){
 		return IVehiculos.obtenerVehiculo(id);
 	}
+
+	@GetMapping("/Actualizar/{id}")
+	public Vehiculo aVehiculo(@PathVariable Integer id){
+		return IVehiculos.actualizarVehiculo(id);
+	}
 }

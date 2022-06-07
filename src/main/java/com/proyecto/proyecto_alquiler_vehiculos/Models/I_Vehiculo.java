@@ -13,7 +13,7 @@ public class I_Vehiculo {
         
         List<Vehiculo> automoviles = new ArrayList<Vehiculo>();
         automoviles.add(new Vehiculo(1, "Toyota", "Corolla", "2022",
-         "Mediano", "Automovil", true, 6500,"https://acroadtrip.blob.core.windows.net/catalogo-imagenes/l/RT_V_96df320cb38a4a258f20418527a3d5f7.jpg"));
+         "Mediano", "Automovil", true, 6500, "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/l/RT_V_96df320cb38a4a258f20418527a3d5f7.jpg"));
 
         automoviles.add(new Vehiculo(2, "Toyota", "Etios", "2021",
          "chico","Automovil",true, 5000,"https://cdn.motor1.com/images/mgl/7OE4J/s1/lanzamiento-toyota-etios-platinum.webp" ));
@@ -26,6 +26,7 @@ public class I_Vehiculo {
 
         automoviles.add(new Vehiculo(5, "Chevrolet", "Spin", "2018", "Grande", "Automovil", true, 7500, "https://www.autoweb.com.ar/wp-content/uploads/2021/01/FGD_7793-1024x683.jpg" ));
         
+
         //Con esto desaparecen los vehiculos que ya estan alquilados
         automoviles = automoviles
         .stream()
@@ -40,4 +41,14 @@ public class I_Vehiculo {
         vehiculoSeleccionado = Vehiculos().get(id);
         return vehiculoSeleccionado;
     }
+
+    public Vehiculo actualizarVehiculo(int id){
+        Vehiculo vehiculoSeleccionado = new Vehiculo();
+        vehiculoSeleccionado = Vehiculos().get(id);
+        Vehiculos().get(id).setDisponible(false);
+        vehiculoSeleccionado.setDisponible(false);
+
+        
+        return vehiculoSeleccionado;
+    } 
 }
