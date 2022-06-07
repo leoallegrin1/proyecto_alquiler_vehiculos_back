@@ -2,6 +2,8 @@ import { Vehiculo } from './../vehiculo';
 import { Component, OnInit} from '@angular/core';
 import { VehiculoService } from '../vehiculo.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registrar-alquiler-vehiculo',
   templateUrl: './registrar-alquiler-vehiculo.component.html',
@@ -11,7 +13,7 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
 
   vehiculos : Vehiculo;
 
-  constructor(private vehiculoServicio:VehiculoService, private _route:ActivatedRoute) { }
+  constructor(private vehiculoServicio:VehiculoService, private _route:ActivatedRoute,  private router: Router) { }
 
   ngOnInit() {
     let id = this._route.snapshot.paramMap.get('id');
@@ -30,6 +32,14 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
     })
   }
 
+  actualizarVehiculo(vehiculo: Vehiculo){
+    this.vehiculoServicio.actualizarVehiculo(vehiculo.id).subscribe(dato => {
+      this.vehiculos = dato;
+    });
+    alert("Su alquiler ha sido confirmado con éxito");
+    let link = ['/vehiculos'];
+    this.router.navigate(link);
+  }
 }
 
 
