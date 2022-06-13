@@ -1,10 +1,7 @@
 package com.proyecto.proyecto_alquiler_vehiculos.Models;
 
-import java.io.File;
 import java.time.format.DateTimeFormatter;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 
 
