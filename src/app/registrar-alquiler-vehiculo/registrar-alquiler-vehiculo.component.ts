@@ -33,10 +33,10 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
   }
 
   actualizarVehiculo(vehiculo: Vehiculo){
-    this.vehiculoServicio.actualizarVehiculo(vehiculo.id - 1).subscribe(dato => {
+    this.vehiculoServicio.actualizarVehiculo(vehiculo.id).subscribe(dato => {
       this.vehiculos = dato;
     });
-    alert("Su alquiler ha sido confirmado con éxito");
+    alert("Su alquiler ha sido confirmado con éxito ");
     let link = ['/vehiculos'];
     this.router.navigate(link);
   }
