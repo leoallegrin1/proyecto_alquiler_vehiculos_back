@@ -2,7 +2,6 @@ package com.proyecto.proyecto_alquiler_vehiculos.Models;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -32,7 +31,8 @@ public class I_Vehiculo {
     public List<Vehiculo> Vehiculos() {
         
         List<Vehiculo> automoviles = new ArrayList<Vehiculo>();
-        
+        List<Vehiculo> automoviles_habilitados = new ArrayList<Vehiculo>();
+
         automoviles.add(automovil1);
         automoviles.add(automovil2);
         automoviles.add(automovil3);
@@ -40,26 +40,35 @@ public class I_Vehiculo {
         automoviles.add(automovil5);
         
         //Con esto desaparecen los vehiculos que ya estan alquilados
-        automoviles = automoviles
-        .stream()
-        .filter(x -> x.isDisponible())
-        .collect(Collectors.toList());
+        for (Vehiculo vehiculos_habilitados : automoviles) {
+            if(vehiculos_habilitados.isDisponible()){
+                automoviles_habilitados.add(vehiculos_habilitados);
+            }
+        }
 
-        return automoviles;
+        return automoviles_habilitados;
     }
 
 
     public Vehiculo obtenerVehiculo(int id){
         Vehiculo vehiculoSeleccionado = new Vehiculo();
-        vehiculoSeleccionado = Vehiculos().get(id);
+        for (Vehiculo vehiculo : Vehiculos()) {
+            if(vehiculo.getID() == id){
+                vehiculoSeleccionado = vehiculo;
+            }
+        }
         return vehiculoSeleccionado;
     }
 
     public Vehiculo actualizarVehiculo(int id){
         Vehiculo vehiculoSeleccionado = new Vehiculo();
-        vehiculoSeleccionado = Vehiculos().get(id);
-        Vehiculos().get(id).setDisponible(false);
-        vehiculoSeleccionado.setDisponible(false);
-        return  vehiculoSeleccionado;
+        for (Vehiculo vehiculo : Vehiculos()) {
+            if(vehiculo.getID() == id){
+                vehiculoSeleccionado = vehiculo;
+                vehiculoSeleccionado.setDisponible(false);
+            }
+        }
+        return vehiculoSeleccionado;
+        
     } 
 }

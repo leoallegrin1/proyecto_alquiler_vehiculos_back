@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,12 +19,6 @@ public class AlquilerController {
 
     @Autowired
 	private I_Vehiculo IVehiculos;
-
-    @GetMapping("/login")
-	public String Login(@RequestParam(value = "name", defaultValue = "Leo") String name) {
-
-		return String.format("Bienvenido!");
-	}
 
 	//Este metodo lista todos los vehiculos
 	@GetMapping("/vehiculos")
